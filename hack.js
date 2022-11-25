@@ -10,7 +10,7 @@ xhr.onload = function () {
 
   questions = json.content.questions;
 
-  setInterval(answerQuestions, 500);
+  setInterval(answerQuestions, 200);
 };
 
 xhr.open(
