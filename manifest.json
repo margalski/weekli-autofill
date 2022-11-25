@@ -1,0 +1,21 @@
+{
+    "name": "Weekli Hack",
+    "version": "6.9",
+    "manifest_version": 3,
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "jquery.min.js",
+                "hack.js"
+            ],
+            "matches": [
+                "https://app.weekli.io/*"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
