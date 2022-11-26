@@ -13,7 +13,7 @@
                 "hack.js"
             ],
             "matches": [
-                "https://app.weekli.io/*"
+                "https://app.weekli.io/web-questionnaire/*"
             ],
             "run_at": "document_end"
         }
