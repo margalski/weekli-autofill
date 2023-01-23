@@ -1,8 +1,6 @@
 var code = new URLSearchParams(window.location.search).get("code");
 
-fetch(
-  `https://st6arucqsa.execute-api.eu-west-1.amazonaws.com/production/pulses/questions/${code}`
-)
+fetch(`https://st6arucqsa.execute-api.eu-west-1.amazonaws.com/production/pulses/questions/${code}`)
   .then((res) => res.json())
   .then((json) => {
     setInterval(() => {
@@ -14,10 +12,10 @@ function answerQuestions(questions) {
   var question = questions.find((o) => {
     return o["name"] === $(".m-questions:visible h1").text();
   });
+
   var bestAnswer = question.answerTemplate.answers.find((o) => {
-    return o["value"] === 100;
+    return (o["value"] === 100 || o["value"] === 10);
   });
-  $(
-    `.m-questions:visible .answer-options:contains(${bestAnswer.lable})`
-  ).click();
+  
+  $(`.m-questions:visible button:contains(${bestAnswer.lable})`).eq(0).click();
 }
